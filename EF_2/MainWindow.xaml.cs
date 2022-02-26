@@ -29,11 +29,9 @@ namespace EF_2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Users id = (from user in loginPass.UsersTable
-                     where user.Login == ).FirstOrDefault
-            /*Users admin = new Users() { Login = "admin", Pass = "admin" };
+            Users admin = new Users() { Login = "admin", Pass = "admin" };
             loginPass.UsersTable.Add(admin);
-            loginPass.SaveChanges();*/
+            loginPass.SaveChanges();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
