@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EF_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="52,136,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="52,180,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        Title="Тест БД" Height="222" Width="143">
+    <StackPanel>
+        <Label>Логин</Label>
+        <TextBox x:Name="loginTB" Margin="8"></TextBox>
+        <Label>Пароль</Label>
+        <TextBox x:Name="passTB" Margin="8"></TextBox>
+        <Button Margin="8" Click="Button_Click">Вход</Button>
+        <Button Margin="8" Click="Button_Click">Регистрация</Button>
 
-    </Grid>
+    </StackPanel>
 </Window>
