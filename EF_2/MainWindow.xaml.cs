@@ -30,7 +30,16 @@ namespace EF_2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Users id = (from user in loginPass.UsersTable
-                        where user.Login == loginTB.Text).FirstOrDefault();
+                        where user.Login == loginTB.Text && user.Pass == passTB.Text 
+                        select user ).FirstOrDefault();
+            if (id != null) 
+            {
+                MessageBox.Show(id.Id.ToString());
+            }
+            else 
+            {
+                MessageBox.Show("Данного пользователя не существует");
+            }
             /*Users admin = new Users() { Login = "admin", Pass = "admin" };
             loginPass.UsersTable.Add(admin);
             loginPass.SaveChanges();*/
@@ -38,10 +47,22 @@ namespace EF_2
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var users = loginPass.UsersTable;
-            foreach(Users user in users) 
+            if (loginTB.Text != "" && passTB.Text != "") 
             {
-                MessageBox.Show(user.Id.ToString() + " " + user.Login + " " + user.Pass);
+                int count = (from user in loginPass.UsersTable
+                             where user.Login == loginTB.Text 
+                             select user).Count();
+                if (count == 0) 
+                {
+                    Users user = new Users() { Login = loginTB.Text, Pass = passTB.Text };
+                    loginPass.UsersTable.Add(user);
+                    loginPass.SaveChanges();
+                    MessageBox.Show("Запись добавлена в БД");
+                }
+                else 
+                {
+                    MessageBox.Show("Такой пользователь уже существует");
+                }
             }
         }
     }

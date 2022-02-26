@@ -12,7 +12,7 @@
         <Label>Пароль</Label>
         <TextBox x:Name="passTB" Margin="8"></TextBox>
         <Button Margin="8" Click="Button_Click">Вход</Button>
-        <Button Margin="8" Click="Button_Click">Регистрация</Button>
+        <Button Margin="8" Click="Button_Click_1">Регистрация</Button>
 
     </StackPanel>
 </Window>
